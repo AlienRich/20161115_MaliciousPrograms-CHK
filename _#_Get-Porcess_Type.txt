@@ -1,0 +1,3 @@
+$Now=get-date -Format yyyyMMdd-HHmm
+Write-Host $Now" ::: Scan-IP ::: "$ScanIP -ForegroundColor Cyan -BackgroundColor DarkBlue
+Get-Process -ComputerName $ScanIP -Name "FTool-light" | select MachineName,Name,VM,Id | Export-Csv -Path .\_%RunDate%-%RunTime%_已發動執行_TaskList.csv -Encoding UTF8 -Force -Append
