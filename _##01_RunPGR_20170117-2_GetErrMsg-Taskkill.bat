@@ -21,7 +21,7 @@ COLOR 78
 TITLE "²M°£´Ý¯dTASK ::: %RunID%"
 for /F %%i IN (%IPList%) do (
 	echo TaskKill ::: %%i
-	if exist \\%%i\c$\*.* start robocopy C:\temp \\%%i\c$\temp _#_TaskKill-_FTool.bat /r:3
+	if exist \\%%i\c$\*.* start robocopy C:\temp \\%%i\c$\temp _#_TaskKill-_FTool.bat /r:3 /w:0
 	ping 127.0.0.1 -w 800 -n 5
 	if exist \\%%i\c$\temp\_#_TaskKill-_FTool.bat echo %%i>>%CopyOKIP%
 	if exist \\%%i\c$\temp\_#_TaskKill-_FTool.bat start .\psexec \\%%i C:\temp\_#_TaskKill-_FTool.bat
